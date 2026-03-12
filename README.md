@@ -1,127 +1,104 @@
-# ProShop eCommerce Platform
+# 🚀 Project Setup & Execution Guide
 
-> eCommerce platform built with the MERN stack & Redux.
+Follow the steps below to run the project locally.
 
-### THIS PROJECT IS DEPRECATED
-This project is no longer supported. The new project/course has been released. The code has been cleaned up and now uses Redux Toolkit. You can find the new version [HERE](https://github.com/bradtraversy/proshop-v2)
+---
 
-![screenshot](https://github.com/bradtraversy/proshop_mern/blob/master/uploads/Screen%20Shot%202020-09-29%20at%205.50.52%20PM.png)
+## 🖥️ Step 1: Set Up the Frontend (React App)
 
-## Features
+### 1️⃣ Navigate to the client folder
 
-- Full featured shopping cart
-- Product reviews and ratings
-- Top products carousel
-- Product pagination
-- Product search feature
-- User profile with orders
-- Admin product management
-- Admin user management
-- Admin Order details page
-- Mark orders as delivered option
-- Checkout process (shipping, payment method, etc)
-- PayPal / credit card integration
-- Database seeder (products & users)
-
-## Note on Issues
-Please do not post issues here that are related to your own code when taking the course. Add those in the Udemy Q/A. If you clone THIS repo and there are issues, then you can submit
-
-## Usage
-
-### ES Modules in Node
-
-We use ECMAScript Modules in the backend in this project. Be sure to have at least Node v14.6+ or you will need to add the "--experimental-modules" flag.
-
-Also, when importing a file (not a package), be sure to add .js at the end or you will get a "module not found" error
-
-You can also install and setup Babel if you would like
-
-### Env Variables
-
-Create a .env file in then root and add the following
-
-```
-NODE_ENV = development
-PORT = 5000
-MONGO_URI = your mongodb uri
-JWT_SECRET = 'abc123'
-PAYPAL_CLIENT_ID = your paypal client id
+```bash
+cd client
 ```
 
-### Install Dependencies (frontend & backend)
+### 2️⃣ Install dependencies (if not already installed)
 
-```
-npm install
-cd frontend
+```bash
 npm install
 ```
 
-### Run
+### 3️⃣ Start the React development server
 
-```
-# Run frontend (:3000) & backend (:5000)
+```bash
 npm run dev
-
-# Run backend only
-npm run server
 ```
 
-## Build & Deploy
+### 4️⃣ Frontend will run on:
 
 ```
-# Create frontend prod build
-cd frontend
-npm run build
+http://localhost:5173
 ```
 
-There is a Heroku postbuild script, so if you push to Heroku, no need to build manually for deployment to Heroku
+---
 
-### Seed Database
+## 🛠️ Step 2: Set Up the Backend (Express Server)
 
-You can use the following commands to seed the database with some sample users and products as well as destroy all data
+### 1️⃣ Open a new terminal window/tab
 
-```
-# Import data
-npm run data:import
+### 2️⃣ Navigate to the server folder
 
-# Destroy data
-npm run data:destroy
+```bash
+cd server
 ```
 
-```
-Sample User Logins
+OR (if currently inside client folder)
 
-admin@example.com (Admin)
-123456
-
-john@example.com (Customer)
-123456
-
-jane@example.com (Customer)
-123456
+```bash
+cd ../server
 ```
 
+---
 
-## License
+## ⚙️ Step 3: Configure Environment Variables
 
-The MIT License
+Inside the **server** folder, create a file named:
 
-Copyright (c) 2020 Traversy Media https://traversymedia.com
+```
+.env
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Add the following inside the `.env` file:
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+```env
+MONGO_URI=mongodb://localhost:27017/shopez
+PORT=8000
+```
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+Make sure MongoDB is running locally before starting the server.
+
+---
+
+## ▶️ Step 4: Start the Backend Server
+
+Inside the **server** folder, run:
+
+```bash
+nodemon index.js
+```
+
+OR (if nodemon is not installed)
+
+```bash
+npm start
+```
+
+---
+
+### ✅ Backend will run on:
+
+```
+http://localhost:8000
+```
+
+---
+
+## 📌 Important Notes
+
+* Ensure MongoDB is installed and running locally.
+* Run frontend and backend in **separate terminals**.
+* If you face dependency issues, delete `node_modules` and run `npm install` again.
+
+---
+
+🎉 Your full-stack application should now be running successfully!
